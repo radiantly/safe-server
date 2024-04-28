@@ -18,4 +18,5 @@ body {
 
 body {
   --container-width: min(1280px, 95vw);
+  --blue: #527cb2;
 }
