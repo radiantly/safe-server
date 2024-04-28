@@ -1,10 +1,23 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { AuthProvider } from "@asgardeo/auth-react";
+import "@fontsource-variable/inter";
+import "@fontsource/righteous";
+import "./index.css";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+import App from "./App.jsx";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+    <AuthProvider
+      config={{
+        signInRedirectURL: window.location.origin,
+        signOutRedirectURL: window.location.origin,
+        scope: ["openid", "profile"],
+        ...window.configs,
+      }}
+    >
+      <App />
+    </AuthProvider>
+  </React.StrictMode>
+);

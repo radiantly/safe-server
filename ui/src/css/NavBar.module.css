@@ -1,0 +1,51 @@
+.nav {
+  width: 100vw;
+  height: 75px;
+
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.container {
+  width: var(--container-width);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container .logo {
+  font-family: "Righteous", system-ui;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.container .buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  font-weight: 600;
+}
+
+.container .buttons > div {
+  border-radius: 3px;
+  padding: 5px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.secondary {
+  --hover-color: #ddd;
+}
+
+.primary {
+  color: white;
+  background-color: #222;
+  --hover-color: #444;
+}
+
+.container .buttons > div:hover {
+  background-color: var(--hover-color);
+}
