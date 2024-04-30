@@ -1,23 +1,39 @@
 import styles from "../css/NavBar.module.css";
-import { useAuthContext } from "@asgardeo/auth-react";
+import { useContext } from "react";
+import AuthContext from "../contexts/AuthContext";
 
 function NavBar() {
-  const { state, signIn, signOut } = useAuthContext();
+  const user = useContext(AuthContext);
   return (
     <nav className={styles.nav}>
       <div className={styles.container}>
         <div className={styles.logo}>Safe Server</div>
         <div className={styles.buttons}>
-          {state?.isAuthenticated ? (
-            <div className={styles.secondary} onClick={() => signOut()}>
+          {user ? (
+            <div
+              className={styles.secondary}
+              onClick={() => {
+                window.location.href = "/auth/logout";
+              }}
+            >
               Log out
             </div>
           ) : (
             <>
-              <div className={styles.secondary} onClick={() => signIn()}>
+              <div
+                className={styles.secondary}
+                onClick={() => {
+                  window.location.href = "/auth/login";
+                }}
+              >
                 Login
               </div>
-              <div className={styles.primary} onClick={() => signIn()}>
+              <div
+                className={styles.primary}
+                onClick={() => {
+                  window.location.href = "/auth/login";
+                }}
+              >
                 Sign up
               </div>
             </>
