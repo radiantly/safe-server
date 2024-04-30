@@ -1,0 +1,40 @@
+.bar-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  color: var(--color);
+  gap: 5px;
+}
+
+.red {
+  --color: #ec5353;
+}
+.yellow {
+  --color: #ffd56a;
+}
+.green {
+  --color: #1cd088;
+}
+
+.title-row {
+  font-size: 0.75em;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+}
+
+.bars {
+  display: flex;
+  gap: 4px;
+}
+
+.bars > div {
+  background-color: #d9d9d9;
+  height: 26px;
+  width: 8px;
+  border-radius: 2px;
+}
+
+.bars > div.colored {
+  background-color: var(--color);
+}

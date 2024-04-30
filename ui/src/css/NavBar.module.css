@@ -40,6 +40,11 @@
   --hover-color: #ddd;
 }
 
+.secondary.email {
+  pointer-events: none;
+  color: #aaa;
+}
+
 .primary {
   color: white;
   background-color: #222;

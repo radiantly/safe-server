@@ -10,14 +10,24 @@ function NavBar() {
         <div className={styles.logo}>Safe Server</div>
         <div className={styles.buttons}>
           {user ? (
-            <div
-              className={styles.secondary}
-              onClick={() => {
-                window.location.href = "/auth/logout";
-              }}
-            >
-              Log out
-            </div>
+            <>
+              <div
+                className={[styles.secondary, styles.email].join(" ")}
+                onClick={() => {
+                  window.location.href = "/auth/logout";
+                }}
+              >
+                {user.email}
+              </div>
+              <div
+                className={styles.secondary}
+                onClick={() => {
+                  window.location.href = "/auth/logout";
+                }}
+              >
+                Log out
+              </div>
+            </>
           ) : (
             <>
               <div
